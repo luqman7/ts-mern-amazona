@@ -1,6 +1,5 @@
 import React, { useEffect, useReducer } from "react"
 import { Col, Row } from "react-bootstrap"
-import { sampleProduct } from "../data"
 import { Link } from "react-router-dom"
 import { Product } from "../types/Product"
 import axios from "axios"
@@ -67,7 +66,7 @@ export default function HomePage() {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <Row>
-      {sampleProduct.map((product) => (
+      {products.map((product) => (
         <>
           <Col key={product.slug} sm={6} md={4} lg={3}>
             <Link to={"/product/" + product.slug}>
